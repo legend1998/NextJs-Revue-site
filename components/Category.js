@@ -9,9 +9,15 @@ function Category({ cat }) {
         <i className={cat.class + " fa-lg pr-3"}></i>
         <p className="flex-1">{cat.name}</p>
         {show ? (
-          <i className="fas fa-minus px-2" onClick={() => setshow(false)}></i>
+          <i
+            className="fas fa-minus px-2 cursor-pointer"
+            onClick={() => setshow(false)}
+          ></i>
         ) : (
-          <i className="fas fa-plus px-2" onClick={() => setshow(true)}></i>
+          <i
+            className="fas fa-plus px-2  cursor-pointer"
+            onClick={() => setshow(true)}
+          ></i>
         )}
       </div>
 
@@ -22,7 +28,7 @@ function Category({ cat }) {
               href={`/category/${cat.id}/${subcat.replaceAll(" ", "_")}`}
               key={index}
             >
-              <p className="py-1">{subcat}</p>
+              <p className="py-1 cursor-pointer">{subcat}</p>
             </Link>
           ))}
         </div>

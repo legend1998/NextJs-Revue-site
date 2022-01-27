@@ -4,11 +4,14 @@ import reducer, { initialState } from "../Reducer";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
+  const EmptyLayout = ({ children }) => <>{children}</>;
+  const Layout = Component.layout || EmptyLayout;
   return (
     <div className="">
-      <Head></Head>
       <StateProvider initialState={initialState} reducer={reducer}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </StateProvider>
     </div>
   );
